@@ -1,9 +1,8 @@
-package uk.co.scrapeworks.retrieval;
+package uk.co.scrapeworks.retriever;
 
-import java.net.URI;
+import uk.co.scrapeworks.domain.WebPageResponse;
 
-public interface WebpageRetriever {
+public interface WebPageRetriever {
 
-    WebpageDetails retrievePage(URI uri);
-
+    WebPageResponse retrievePage(String string);
 }

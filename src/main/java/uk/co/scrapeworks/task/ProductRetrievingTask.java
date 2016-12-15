@@ -1,8 +1,9 @@
-package uk.co.scrapeworks.retriever;
+package uk.co.scrapeworks.task;
 
 import uk.co.scrapeworks.domain.Product;
 import uk.co.scrapeworks.domain.WebPageResponse;
 import uk.co.scrapeworks.extractor.ProductInfoExtractor;
+import uk.co.scrapeworks.retriever.WebPageRetriever;
 
 import java.util.concurrent.Callable;
 

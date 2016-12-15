@@ -1,10 +1,10 @@
 package uk.co.scrapeworks.domain;
 
-public class Response {
+public class WebPageResponse {
     private final String response;
     private final int responseSize;
 
-    public Response(String response, int responseSize){
+    public WebPageResponse(String response, int responseSize){
         this.response = response;
         this.responseSize = responseSize;
     }

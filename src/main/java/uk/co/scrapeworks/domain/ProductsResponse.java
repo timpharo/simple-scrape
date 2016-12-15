@@ -1,7 +1,13 @@
 package uk.co.scrapeworks.domain;
 
-/**
- * Created by timothy.pharo on 14/12/2016.
- */
-public class Products {
+import java.util.List;
+
+public class ProductsResponse {
+    private final List<Product> products;
+    private final Double total;
+
+    public ProductsResponse(List<Product> products, Double total) {
+        this.products = products;
+        this.total = total;
+    }
 }

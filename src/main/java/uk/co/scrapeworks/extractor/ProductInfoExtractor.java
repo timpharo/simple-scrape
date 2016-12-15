@@ -1,8 +1,9 @@
 package uk.co.scrapeworks.extractor;
 
-import uk.co.scrapeworks.domain.Product;
+public interface ProductInfoExtractor {
+    String getTitle(String productHtml);
 
-public interface ProductExtractor {
+    Double getUnitPrice(String productHtml);
 
-    Product addAdditionalInformation(Product product)
+    String getProductUrl(String productHtml);
 }
