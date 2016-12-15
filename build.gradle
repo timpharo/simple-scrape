@@ -1,0 +1,40 @@
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    //Chosen due to its ease of use
+    compile 'org.glassfish.jersey.core:jersey-client:2.25'
+    //Chosen for its speed and ea
+    compile 'org.jsoup:jsoup:1.10.1'
+    //Chosen for its speed when it comes to smaller object trees
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'org.apache.commons:commons-lang3:3.5'
+
+    testCompile 'junit:junit:4.12'
+    //Great fluent syntax
+    testCompile 'org.assertj:assertj-core:3.6.1'
+    testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'com.github.tomakehurst:wiremock:2.4.1'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'uk.co.scrapeworks.ApplicationRunner'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'uk.co.scrapeworks.ApplicationRunner'
+    }
+}
